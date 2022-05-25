@@ -14,6 +14,8 @@ function nasa() {
             console.log(dados)
             $('#descricao').text(dados.explanation)
             if (dados.media_type === 'image') {
+                $('#video').css('display', 'none')
+
                 $('#video').attr({
                     src: ''
                 })
@@ -29,6 +31,8 @@ function nasa() {
                 $('#img').attr({
                     src: ''
                 })
+
+                $('#video').css('display', 'flex')
 
                 $('#video').attr({
                     src: dados.url

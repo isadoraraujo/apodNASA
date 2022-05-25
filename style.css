@@ -8,27 +8,34 @@
 
 body {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
 
     background-image: url('./images/background.jpg');
     background-size: 15%;
 
     color: white;
     font-family: 'Odibee Sans', cursive;
-    font-size: 1.3em;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: flex-start;
 }
 
 .principal {
-    margin-top: 2rem;
-    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    
+    font-size: 1.2em;
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+
+    text-align: center;
 }
 
 .data, .botao {
@@ -41,6 +48,8 @@ body {
     font-size: 1em;
     color: rgb(0, 48, 126);
     text-align: center;
+    font-weight: 90%;
+
     background-color: white;
     border: none;
 }
@@ -55,14 +64,11 @@ body {
     height: 20rem;
 }
 
-img {
-    margin-top: 4rem;
+img, iframe {
+    margin-top: 3rem;
     margin-bottom: 3rem;
-    width: 50%;
     display: none;
-}
 
-iframe {
-    margin-top: 4rem;
-    margin-bottom: 3rem;
+    width: 40%;
+    height: 60%;
 }
