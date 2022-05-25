@@ -10,7 +10,7 @@ body {
     width: 100vw;
     height: 100vh;
 
-    background-image: url('../images/background.jpg');
+    background-image: url('./images/background.jpg');
     background-size: 15%;
 
     color: white;
@@ -55,4 +55,5 @@ img {
     margin-top: 4rem;
     margin-bottom: 3rem;
     width: 35vw;
+    display: none;
 }

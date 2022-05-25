@@ -12,14 +12,26 @@ function nasa() {
 
                 success: function(dados) {
                     $('#descricao').text(dados.explanation)
-                    $('#img').attr({
-                        src: dados.hdurl})  
-                    || 
-                     $('#video').attr({
-                    src: dados.hdurl})
+                    if (dados.media_type === 'image') {
+                        $('#video').attr({
+                        src: ''})
+
+                        $('#img').css('display', 'flex')
+
+                        $('#img').attr({
+                        src: dados.hdurl})
+                    } else {
+                        $('#img').css('display', 'none')
+
+                        $('#img').attr({
+                        src: ''})
+
+                        $('#video').attr({
+                        src: dados.hdurl})
+                    }       
             },
                 error: function() {
-                    if (conteudo < 1995-06-16) {
+                    if (conteudo < '1995-06-16') {
                         alert('Você precisa adicionar datas a partir de 1995')
                     } 
             }
