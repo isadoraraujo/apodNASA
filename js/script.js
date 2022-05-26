@@ -1,4 +1,5 @@
-let btn = $('#botao').click(() => {
+let form = $('#form').submit((event) => {
+    event.preventDefault()
     return nasa()
 })
 
