@@ -6,14 +6,12 @@ let form = $('#form').submit((event) => {
 
 function nasa() {
     let conteudo = $('#data').val()
-    console.log(conteudo)
     $.get({
         type: `GET`,
         url: `https://api.nasa.gov/planetary/apod?api_key=6ifsI1kyzgSG0BhA5pS3gg3nh3fXQy0MO80gbWLs&date=${conteudo}`,
 
-        success: function (dados) {
-            console.log(dados)
-            $('#descricao').text(dados.explanation)
+        success: function(dados) {
+            $('#descricao').text(dados.explanation) 
             if (dados.media_type === 'image') {
                 $('#video').css('display', 'none')
 
@@ -40,9 +38,16 @@ function nasa() {
                 })
             }
         },
-        error: function () {
+        error: function() {
+            let data = new Date()
+            let dia = String(data.getDate()).padStart(2, '0')
+            let mes = String(data.getMonth() + 1).padStart(2, '0')
+            let ano = data.getFullYear()
+            let dataAtual = ano + '-' + mes + '-' + dia
             if (conteudo < '1995-06-16') {
                 alert('Você precisa adicionar datas a partir de 16 de junho de 1995')
+            } else if (conteudo > dataAtual) {
+                alert('Esse dia ainda não aconteceu')
             }
         }
     })
